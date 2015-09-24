@@ -1,0 +1,14 @@
+.row
+  .col-xs-12
+    - if @mutants.any?
+      .with-mutants
+        h2.text-center All the mutants
+        .text-center
+          = link_to 'Create a mutant', new_mutant_path, class: 'btn btn-info'
+        table.table.list
+          = render @mutants 
+    - else
+      .without-mutants
+        h3.text-center 
+          | There are no mutants. 
+          = link_to 'Add the first one', new_mutant_path

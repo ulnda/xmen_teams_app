@@ -1,0 +1,11 @@
+.container {
+  width: 750px;
+}
+
+.list {
+  margin-top: 10px;
+  .name {
+    color: grey;
+    font: italic 1.5em Georgia, 'Times New Roman', Times, serif;
+  }
+}
