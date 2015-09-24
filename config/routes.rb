@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :mutants
   resources :teams
+  resources :tasks
   # You can have the root of your site routed with "root"
 
   # Example of regular route:
