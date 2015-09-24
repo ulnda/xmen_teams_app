@@ -4,4 +4,5 @@ nav.navbar.navbar-default
       a.navbar-brand X-Men Map App
     .navbar-collapse
       ul.nav.navbar-nav
-        li= link_to 'Mutants', mutants_path
+        li class="#{ nav_item_class(mutants_path) }"= link_to 'Mutants', mutants_path
+        li class="#{ nav_item_class(teams_path) }"= link_to 'Teams', teams_path

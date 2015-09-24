@@ -5,6 +5,8 @@ RSpec.describe Mutant, type: :model do
 
   it { expect(mutant).to respond_to(:name) }
   it { expect(mutant).to respond_to(:description) }
+  it { expect(mutant).to respond_to(:mutant_teams) }
+  it { expect(mutant).to respond_to(:teams) }
 
   it { expect(mutant).to be_valid }
 

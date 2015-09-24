@@ -1,0 +1,14 @@
+.teams {
+  form {
+    ul {
+      padding-left: 0;
+      li {
+        list-style-type: none;
+
+        input[type='checkbox'] {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}
