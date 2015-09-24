@@ -41,6 +41,8 @@ class TasksController < ApplicationController
 
   private
     def task_params
-      params.require(:task).permit(:title, :description, team_ids: [])
+      p = params.require(:task).permit(:title, :description, team_ids: [])
+      p[:team_ids] ||= []
+      p
     end
 end

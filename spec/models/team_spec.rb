@@ -23,4 +23,20 @@ RSpec.describe Team, type: :model do
       it { expect(team).not_to be_valid }  
     end
   end
+
+  describe 'mutant_teams validations' do
+    describe 'dependent destroy' do
+      before { create(:mutant_team, team: team) }
+
+      it { expect{ team.destroy }.to change(MutantTeam, :count).by(-1) }
+    end
+  end
+
+  describe 'team_tasks validations' do
+    describe 'dependent destroy' do
+      before { create(:team_task, team: team) }
+
+      it { expect{ team.destroy }.to change(TeamTask, :count).by(-1) }
+    end
+  end
 end
