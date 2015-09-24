@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150924123626) do
+ActiveRecord::Schema.define(version: 20150924193853) do
 
   create_table "mutant_teams", force: true do |t|
     t.integer  "mutant_id"
@@ -30,6 +30,24 @@ ActiveRecord::Schema.define(version: 20150924123626) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "tasks", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "team_tasks", force: true do |t|
+    t.integer  "team_id"
+    t.integer  "task_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "team_tasks", ["task_id"], name: "index_team_tasks_on_task_id"
+  add_index "team_tasks", ["team_id", "task_id"], name: "index_team_tasks_on_team_and_task", unique: true
+  add_index "team_tasks", ["team_id"], name: "index_team_tasks_on_team_id"
 
   create_table "teams", force: true do |t|
     t.string   "name"
