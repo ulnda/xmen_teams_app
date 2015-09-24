@@ -1,0 +1,6 @@
+tr
+  td.col-xs-7.vertical-align.name= task.title
+  td.col-xs-5
+    .pull-right
+      = link_to 'Редактировать', edit_task_path(task), class: 'btn btn-primary'
+      = link_to 'Удалить', task_path(task), method: :delete, class: 'btn btn-danger'

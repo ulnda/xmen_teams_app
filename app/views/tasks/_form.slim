@@ -1,0 +1,24 @@
+= form_for @task, html: { class: 'form-horizontal' } do |f|
+  .form-group
+    .col-sm-9.col-sm-offset-3
+      = render partial: 'shared/form_errors', locals: { subject: @task }
+  .form-group
+    label.col-sm-3.control-label for='title' Title
+    .col-sm-9
+      = f.text_field :title, class: 'form-control', placeholder: 'Title'
+  .form-group
+    label.col-sm-3.control-label for='description' Description
+    .col-sm-9
+      = f.text_area :description, class: 'form-control', placeholder: 'Description'
+  .form-group
+    label.col-sm-3.control-label Teams
+    .col-sm-9
+      ul
+        - Team.all.each do |t|
+          li
+            = check_box_tag "team_ids", t.id, @task.teams.include?(t), name: 'task[team_ids][]'
+            = t.name
+  .form-group
+    .col-sm-9.col-sm-offset-3
+      = f.submit 'Save', class: 'btn btn-success'
+  
