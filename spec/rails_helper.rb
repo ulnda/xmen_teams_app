@@ -39,6 +39,8 @@ RSpec.configure do |config|
 
   # Include FactoryGirl methods to make tests easier
   config.include FactoryGirl::Syntax::Methods
+  # Include Capybara methods to make request tests
+  config.include Capybara::DSL
 
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
