@@ -1,0 +1,6 @@
+tr
+  td.col-xs-7.vertical-align.name= mutant.name
+  td.col-xs-5
+    .pull-right
+      = link_to 'Edit', edit_mutant_path(mutant), class: 'btn btn-primary'
+      = link_to 'Delete', mutant_path(mutant), method: :delete, class: 'btn btn-danger'

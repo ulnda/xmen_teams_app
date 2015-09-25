@@ -1,0 +1,6 @@
+- if flash[:alert].present?
+  .alert.alert-success.alert-dismissible.text-center
+    button.close type="button" data-dismiss="alert" aria-label="Close"
+      span aria-hidden="true"
+        | &times;
+    = flash[:alert]

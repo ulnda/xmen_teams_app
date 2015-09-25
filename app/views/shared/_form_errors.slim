@@ -1,0 +1,5 @@
+- if subject.errors.present?
+  .errors.has-error
+    ul 
+      - subject.errors.full_messages.each do |msg|
+        li= msg
